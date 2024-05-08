@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="div1">
+      <img src="./placeholder.png" alt="">
+    </div>
+
+    <div class="div2">
+      <a href="/">Inicio</a>
+      <a href="/info.html">Info</a>
+      <a href="/">Inicio</a>
+      <a href="/">Inicio</a>
+      <a href="/">Inicio</a>
+    </div>
+  </nav>
+
+  <main>
+    <div>
+      <h3>Informacion/Documentacion</h3>
+      <p>
+        Esto no es la "opcion" definitiva para desarrollar el projecto, investigando <strong>Webtoons</strong> me di
+        cuenta de que al renderizar un "comic" (no se cual es la palabra o termino adecuado) el carga todas las imagenes
+        pero al src le asigna una imagen de placeholder pero despues mediante JavaScript seleciona de las imagenes un
+        atributo personalizado que tiene la ruta del la imagen y hace una solicitud y cargar la imagen correcta, supongo
+        que lo de la imagen en placeholder es para lo del SEO no se a ciencia cierta.
+      </p>
+      <br>
+
+      <p>
+        Tomando en cuenta los Archivos que <strong>Simon</strong> menciono de tipo <strong>cdr</strong> y otros de ese
+        formato, busque informacion sobre este tipo de archivo, estos son como un <strong>zip</strong> que contiene
+        todas la imagenes del "comic",
+        busque como descomprimir un archivo de esos con JavaScript y renderizar la imagenes, consegui en
+        <strong>stackoverflow</strong> varias soluciones pero hubo un comentario que menciono un repositorio de GitHub
+        (<a href="https://github.com/gildas-lormeau/zip.js">enlace del repo</a>) que es como una libreria para realizar
+        esto, busque una alternativa con PHP pero no me parecio tan factible explico.
+      </p>
+
+      <br>
+      <p>
+        Con JavaScript se extraen las imagenes del archivo y se crea una URL "ficticia" y se renderizan las imagenes
+        apuntando a esa URL, y si intentas abrir esa imagen no mustra nada sino un codigo estraño que seria el contenido
+        o
+        metada de la imagen.
+      </p>
+      <br>
+
+
+      <p>
+        Ahora con PHP no se como crear una URL "ficticia" lo que hice fue extraer la imagenes con un metodo que ya tiene
+        PHP esa funcion es <strong> ZipArchive()</strong>, pero el problema es que al extraer el archivo se tienen que
+        guardar en una carpeta para depues hacer una peticion a esa imagen, pero si abrimos la imagen la
+        misma se muetra ya que existen en un lugar del servidor, y eso es lo que no se quiere, que cualquiera pueda
+        descargar las imagenes. Intente renderizar las imagenes y elimnarlas del lugar donde se guardaron pero al no
+        existir no se muestra nada.
+      </p>
+      <br>
+      <p>
+
+        Si notan que tarda en cargar es porque el archivo pesa 40MB
+      </p>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
